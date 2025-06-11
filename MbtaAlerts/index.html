@@ -97,6 +97,7 @@
   <h1>MBTA Subway Alerts</h1>
   <div id="last-updated">Last updated: —</div>
   <div id="alerts"><p class="no-alerts">Loading alerts…</p></div>
+  <div id="no-api-key"><p class="no-alerts" style="Display: none;">Warning - no API Key set!</p></div>
 
   <script>
 
@@ -107,6 +108,10 @@
     {
       apiKey = apiKey.substr(1); // trim ? from query param
       headers = { "x-api-key": apiKey }
+    }
+    else
+    {
+      document.getElementById("no-api-key").style.display = "block";
     }
     
     const ALERTS_URL = "https://api-v3.mbta.com/alerts?filter[route_type]=1" /* + "&sort=-effective_datetime"*/;
