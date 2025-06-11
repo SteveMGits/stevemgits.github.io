@@ -1,3 +1,168 @@
-<html>
-  <h1>Hello, MBTA</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MBTA Subway Alerts</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 1000px;
+      margin: 2em auto;
+      line-height: 1.4;
+    }
+    h1 {
+      text-align: center;
+      color: #005B8A;
+    }
+    #last-updated {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+    }
+    #alerts {
+      margin-top: 1em;
+    }
+    
+    .alert {
+      display: flex;
+      border-left: 4px solid;
+      padding: 0.5em 1em;
+      margin-bottom: 0.75em;
+      border-radius: 3px;
+    }
+    
+    .alertText {
+      
+    }
+    
+    .alert h2 {
+      margin: 0 0 0.25em;
+      font-size: 1.1em;
+      color: #003E5B;
+    }
+
+    .alert p {
+      margin: 0;
+    }
+    
+    .Blue {
+      border-left-color: darkblue;
+      background: lightblue;
+    }
+    
+    .Red {
+      border-left-color: DarkRed;
+      background: LightPink;
+    }
+    
+    .Orange {
+      border-left-color: DarkOrange;
+      background: PeachPuff;
+    }
+    
+    .Green {
+      border-left-color: DarkGreen;
+      background: LightGreen;
+    }
+    
+    .Silver {
+      border-left-color: Gray;
+      background: White;
+    }
+    
+    .icon {
+      display: flex;
+      background-size: 100px, 100px;
+      background-position: center;
+      height: 100px;
+      width: 100px;
+      padding-right: 25px;
+      background-repeat: no-repeat;
+    }
+    
+
+    
+    .icon.Blue {
+      background-image: url('Blue Circle.svg');
+    }
+    
+    .no-alerts {
+      text-align: center;
+      color: #006699;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>MBTA Subway Alerts</h1>
+  <div id="last-updated">Last updated: —</div>
+  <div id="alerts"><p class="no-alerts">Loading alerts…</p></div>
+
+  <script>
+
+    var apiKey = window.location.search;
+    var headers = null;
+    
+    if(apiKey != null && apiKey != "")
+    {
+      apiKey = apiKey.substr(1); // trim ? from query param
+      headers = { "x-api-key": apiKey }
+    }
+    
+    const ALERTS_URL = "https://api-v3.mbta.com/alerts?filter[route_type]=1" /* + "&sort=-effective_datetime"*/;
+
+    async function fetchAlerts() {
+      try {
+        const res = await fetch(ALERTS_URL, {
+          headers: headers ?? {}
+        });
+        if (!res.ok) throw new Error(res.status + " " + res.statusText);
+        const { data } = await res.json();
+        renderAlerts(data);
+        document.getElementById("last-updated").textContent =
+          "Last updated: " + new Date().toLocaleTimeString();
+      } catch (err) {
+        document.getElementById("alerts").innerHTML =
+          `<p class="no-alerts">Error fetching alerts:<br>${err.message}</p>`;
+      }
+    }
+
+    function renderAlerts(alerts) {
+      debugger;
+      
+      // Only show unexpected alerts
+      alerts = alerts.filter(a => a.attributes.lifecycle != "UPCOMING");
+      
+      const container = document.getElementById("alerts");
+      
+      if (!alerts.length) {
+        container.innerHTML = `<p class="no-alerts">No active subway alerts.</p>`;
+        return;
+      }
+      
+      container.innerHTML = alerts
+        .map(a => {
+          // Each alert has attributes: header, description, effect
+          const { effect, cause, short_header, header, informed_entity } = a.attributes;
+          
+          var lineColor = informed_entity[0].route;
+          
+          return `
+            <div class="alert ${lineColor}">
+              <span class="icon ${lineColor}"></span>
+              <div class="alertText">
+                <h2>${lineColor + " Line: " + cause + ", " + effect}</h2>
+                <p>${short_header || header || ""}</p>
+              </div>
+            </div>`;
+        })
+        .join("");
+    }
+
+    // Initial load
+    fetchAlerts();
+    // Refresh every 60 seconds
+    setInterval(fetchAlerts, 300_000);
+  </script>
+</body>
 </html>
