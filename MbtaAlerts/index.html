@@ -112,7 +112,7 @@
   <h1>MBTA Subway Alerts</h1>
   <div id="last-updated">Last updated: —</div>
   <div id="alerts"><p class="no-alerts">Loading alerts…</p></div>
-  <div id="no-api-key" style="display: none; color: Red;"><p class="no-alerts">Warning - no API Key set!</p></div>
+  <div id="no-api-key" style="display: none; font-color: Red;"><p class="no-alerts">Warning - no API Key set!</p></div>
 
   <script>
 
@@ -169,8 +169,8 @@
             <div class="alert ${lineColor}">
               <span class="icon ${lineColor}"></span>
               <div class="alertText">
-                <h2>${lineColor + " Line: " + cause + ", " + effect}</h2>
-                <p>${short_header || header || ""}</p>
+                <h2>${"Cause: " + cause || "Unknown" + ", Effect: " + effect || "Unknown"}</h2>
+                <p>${short_header || header || "No details available"}</p>
               </div>
             </div>`;
         })
