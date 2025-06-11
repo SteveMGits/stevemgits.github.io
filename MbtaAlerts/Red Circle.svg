@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="100"
+  height="100"
+  viewBox="0 0 100 100"
+  style="background: none;"
+>
+  <!-- 1) Replace CIRCLE_COLOR with any CSS color (hex, rgb, named…) -->
+  <circle
+    cx="50"
+    cy="50"
+    r="45"
+    fill="DarkRed"
+  />
+
+  <!--
+    2) Replace XX with your two-letter code,
+    and TEXT_COLOR with any CSS color
+  -->
+  <text
+    x="50"
+    y="52"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Arial, sans-serif"
+    font-size="36"
+    font-weight="bold"
+    fill="White"
+  >RL</text>
+</svg>
