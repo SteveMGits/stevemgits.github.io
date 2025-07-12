@@ -1,0 +1,243 @@
+/*
+TODO - implement opening links/pages inside the display - single page-app/iframe, etc.
+  This will be a fun way to host my own content - articles, LinkedIn Posts, etc.
+  Definitely include something to make that full size tho, esp for mobile
+TODO - use calc to maintain an aspect ratio of some kind?
+TODO - Screen Saver / other animations?
+TODO - credit resources - images, animations, svgs, etc.
+
+*/
+
+::-webkit-scrollbar {
+  width: 4px;
+  visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+
+:root {
+  --pink: #d29b9b;
+  --light-blue: #add9f4;
+  --dark-blue: #476c9b;
+  --teal: #468c98;
+  --black: #101419;
+  --case-color: #bfb895;
+  --terminal-green: #13bd24;
+  --terminal-black: #171717;
+  --terminal-gray: #424242;
+  --font-family: Courier, sans-serif;
+  --font-family-header: Courier, sans-serif;
+  --font-family-list: Courier, sans-serif;
+  --color-bg: var(--terminal-black);
+  --color-bg-alt: var(--terminal-green);
+  --color-text-main: var(--terminal-green);
+  --color-primary: var(--terminal-green);
+  --avatar-max-width: 300px;
+}
+
+:hover::-webkit-scrollbar {
+  width: 4px;
+  visibility: visible;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background-color: var(--terminal-green);
+  visibility: visible;
+}
+
+svg {
+  color: var(--terminal-green);
+}
+
+h1 {
+  color: var(--terminal-green);
+  margin-bottom: 0pt;
+}
+
+h2 {
+  color: var(--terminal-green);
+  padding-bottom: 15pt;
+}
+
+main {
+  border: 15px;
+  border-bottom: 40px;
+  border-style: solid;
+  border-color: var(--case-color);
+  border-radius: 10px;
+  margin: auto;
+  background-image: linear-gradient(
+    45deg,
+    black,
+    var(--terminal-black),
+    var(--terminal-black),
+    var(--terminal-black),
+    var(--terminal-gray)
+  );
+  overflow-y: scroll;
+  overflow-x: clip;
+  scrollbar-color: var(--terminal-green) var(--terminal-green);
+}
+
+body {
+  background-color: var(--terminal-black);
+  /* TODO - change image/apply filter based on time of day */
+  background-image: url("https://cdn.glitch.global/be6d3fd0-1bfb-4856-aa03-029cc6169f6e/wood-paneling.jpg?v=1690384749812");
+  background-size: cover;
+  margin: 0;
+  margin-top: 30pt;
+  margin-bottom: 30pt;
+  z-index: 0;
+  overflow: clip;
+  height: 100vh;
+}
+
+p {
+  font-size: 14pt;
+  text-align: left;
+  color: var(--color-text-main);
+}
+
+a:hover,
+a:active,
+a:focus {
+  background: var(--terminal-green);
+  color: var(--terminal-black);
+}
+
+a:hover svg,
+a:active svg,
+a:focus svg,
+a:hover span,
+a:active span,
+a:focus span {
+  color: var(--terminal-black);
+}
+
+.social-profile-icon:hover path,
+.social-profile-icon:focus path {
+  fill: var(--terminal-black);
+}
+
+.social-profile-icon:hover,
+.social-profile-icon:focus {
+  background-color: var(--terminal-green);
+  border-radius: 10px;
+}
+
+#bezel {
+  color: gray;
+  margin-top: -28px;
+  text-align: right;
+  font-family: Arial;
+  font-style: Italic;
+  z-index: 5;
+  position: relative;
+}
+
+#powerButton {
+  color: yellow;
+  background-color: gray;
+  margin-left: 3px;
+  border-radius: 100px;
+}
+
+#powerButton svg {
+  color: inherit;
+  cursor: pointer;
+}
+
+#displayStand {
+  position: relative;
+  background-color: var(--case-color);
+  justify-content: center;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  z-index: -50;
+}
+
+ul.link-list li {
+  font-size: clamp(0.7rem, 0.5rem + 1.6667vw, 1.2rem);
+  text-align: left;
+}
+
+ul.link-list span {
+  width: 100%;
+  text-align: left;
+}
+
+.avatar {
+  border-radius: 0;
+  box-shadow: 0 0 20px 10px var(--terminal-green);
+  
+}
+
+p.copyright {
+  text-align: center;
+  font-size: clamp(0.4rem, 0.5rem + 1.6667vw, 1rem);
+}
+
+.page {
+  display: none;
+}
+
+/* portrait orientation */
+@media (max-aspect-ratio: 1/1) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    visibility: visible;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--terminal-green);
+    visibility: visible;
+  }
+
+  main {
+    height: calc(100vh - 100pt);
+    max-width: 95%;
+  }
+
+  #displayStand {
+    max-width: 75%;
+    min-width: 50%;
+    min-height: 80pt;
+    background-image: linear-gradient(
+      180deg,
+      var(--terminal-gray),
+      var(--case-color),
+      var(--case-color)
+    );
+  }
+
+  #bezel {
+    max-width: 95%;
+  }
+}
+
+/* landscape orientation */
+@media (min-aspect-ratio: 1/1) {
+  main {
+    height: calc(100vh - 60pt);
+    max-width: 75%;
+  }
+
+  #displayStand {
+    max-width: 55%;
+    min-width: 30%;
+    min-height: 40pt;
+    background-image: linear-gradient(
+      180deg,
+      var(--terminal-gray),
+      var(--case-color)
+    );
+  }
+
+  #bezel {
+    max-width: 86%;
+  }
+}

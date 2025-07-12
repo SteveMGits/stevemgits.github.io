@@ -1,0 +1,18 @@
+{{#if settings.links}}
+<ul class="link-list">
+  {{#each settings.links}}
+  <!--we use a helper defined in vite.config.js to give the li a class name based on the url-->
+  {{#if this.url }}<li class="{{hostasclass  this.url }}"><a href="{{ this.url }}">
+  {{else }}<li><a>{{/if }}
+    {{#if this.img }}<img src="{{ this.img }}" alt="{{this.altText}}" title="{{this.altText}}"/>{{/if }}
+  <!--SVGs of icons found at: https://icons.getbootstrap.com/icons/hourglass-split/ -->  
+  {{#if this.svg }}
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewbox="0 0 16 16" role="img">
+        <title>{{this.altText}}</title>
+        <path d="{{ this.svg }}"/>
+      </svg> 
+    {{/if }}
+    <span>{{ this.text }}</span></a></li>
+  {{/each}}
+</ul>
+{{/if}}

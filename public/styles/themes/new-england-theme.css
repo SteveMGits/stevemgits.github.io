@@ -1,0 +1,53 @@
+:root {
+  --pink: #d29b9b;
+  --light-blue: #ADD9F4;
+  --dark-blue: #476C9B;
+  --teal: #468C98;
+  --black: #101419;
+  --font-family: Arial, sans-serif;
+  --font-family-header: Arial, sans-serif;
+  --font-family-list: Arial, sans-serif;
+  --color-bg: var(--light-blue);
+  --color-bg-alt: var(--teal);
+  --color-text-main: var(--black);
+  --color-primary: var(--teal);
+}
+
+svg {
+  color: var(--dark-blue);
+}
+
+h1 {
+  color: var(--pink);
+  margin-bottom: 0pt;
+}
+
+h2 {
+  color: var(--dark-blue);
+  padding-bottom: 15pt;
+}
+
+main {
+  border: 2px;
+  border-style: solid;
+  border-color: var(--black);
+  margin: auto;
+  max-width: 775px;
+}
+
+body {
+  background-color: var(--dark-blue);
+}
+
+p {
+  font-size: 14pt;
+  text-align: left;
+}
+
+#bezel {
+  display: none;
+}
+
+#displayStand {
+  display: none;
+}

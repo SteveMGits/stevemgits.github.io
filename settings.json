@@ -1,0 +1,68 @@
+{
+  "isRedirecting": true,
+  "metaTitle": "Steven Martinez",
+  "metaDescription": "Links and Socials",
+  "name": "Steven Martinez",
+  "headline": "Software Engineer",
+  "p1": "Steve is Software Engineer who designs and builds complex information systems and APIs with C# and .NET",
+  "theme": "terminal-theme",
+  "avatarImage": "https://cdn.glitch.global/be6d3fd0-1bfb-4856-aa03-029cc6169f6e/Steve%20in%20Monaco.jpg?v=1691111602295",
+  "avatarImageAltText": "Photo of Steven standing in front of the Casino Monte Carlo in Monaco.",
+  "links": [
+    {
+      "url":"https://github.com/SteveMGits/Launchable",
+      "text":"Introducing Launchable - An open-source automation platform for Desktop - Currently in pre-alpha",
+      "svg": "M14 4.5V14a2 2 0 0 1-2 2H8v-1h4a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.629 15.29a1.176 1.176 0 0 1-.112-.449h.765a.578.578 0 0 0 .255.384c.07.049.153.087.249.114.096.028.202.041.32.041.163 0 .301-.023.412-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.152-.326c-.102-.08-.256-.144-.463-.193l-.618-.143a1.72 1.72 0 0 1-.54-.214 1.001 1.001 0 0 1-.35-.367 1.068 1.068 0 0 1-.124-.524c0-.244.064-.457.19-.639.128-.181.303-.322.528-.422.225-.1.483-.149.776-.149.305 0 .565.05.78.152.216.102.383.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472.472 0 0 0-.185.384c0 .121.048.22.144.3a.97.97 0 0 0 .404.175l.621.143c.217.05.405.12.566.211.16.09.285.21.375.358.09.148.134.335.134.56 0 .247-.062.466-.187.656a1.216 1.216 0 0 1-.54.439c-.234.105-.52.158-.858.158a2.21 2.21 0 0 1-.665-.09 1.404 1.404 0 0 1-.477-.252 1.13 1.13 0 0 1-.29-.375Zm-2.72-2.23a1.732 1.732 0 0 0-.103.633v.495c0 .246.034.455.102.627a.833.833 0 0 0 .299.392.845.845 0 0 0 .478.132.86.86 0 0 0 .4-.088.7.7 0 0 0 .273-.249.799.799 0 0 0 .118-.363h.764v.076a1.27 1.27 0 0 1-.225.674c-.137.193-.32.345-.551.454a1.81 1.81 0 0 1-.785.164c-.36 0-.664-.072-.914-.217a1.424 1.424 0 0 1-.572-.626C.064 14.892 0 14.567 0 14.188v-.498c0-.38.065-.705.196-.979a1.44 1.44 0 0 1 .572-.633c.252-.148.555-.222.91-.222.22 0 .422.032.607.097.188.062.35.153.49.272a1.324 1.324 0 0 1 .465.964v.073h-.764a.85.85 0 0 0-.12-.38.7.7 0 0 0-.273-.261.803.803 0 0 0-.398-.097.814.814 0 0 0-.475.138.868.868 0 0 0-.302.398Z",
+      "altText": "CSharp file icon"
+    },
+    {
+      "url":"https://bsky.app/profile/stevenmartinez.dev",
+      "text": "Follow me on Blue Sky",
+      "img":"https://cdn.glitch.global/be6d3fd0-1bfb-4856-aa03-029cc6169f6e/Bluesky_Logo.png?v=1733100024110",
+      "altText": "The Blue Sky logo"
+    },
+    {
+      "url": "https://www.linkedin.com/in/stevenjmartinez/",
+      "text": "Connect on LinkedIn",
+      "svg": "M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z",
+      "altText": "LinkedIn logo"
+    },
+    {
+      "url":"https://glitch.com/~dotdev-glitch-bio",
+      "text": "See this page's source on Glitch",
+      "img":"https://cdn.glitch.me/efc5414a-882b-4708-af81-8461abbc1a82%2Ftouch-icon.png?v=1633521972305",
+      "altText": "The Glitch logo"
+    }
+  ],
+  "social": {
+    "glitch": "https://glitch.com/@SteveMGits",
+    "spotify": "",
+    "substack": "",
+    "dev": "https://dev.to/stevemgits",
+    "leetcode": "https://leetcode.com/SteveMGits/",
+    "facebook": "",
+    "github": "https://github.com/SteveMGits",
+    "gitlab": "",
+    "hashnode": "",
+    "instagram": "https://www.instagram.com/steven.eats/",   
+    "instaBackup": "https://www.instagram.com/steven.eats/",
+    "threads": "https://www.threads.net/@steven.eats",
+    "threadsbackup": "https://www.threads.net/@steven.eats",
+    "linkedin": "https://www.linkedin.com/in/stevenjmartinez/",
+    "medium": "",
+    "patreon": "",
+    "pinterest": "",
+    "twitter": "",
+    "youtube": "https://www.youtube.com/channel/UC-X9Rf1VIOGPa3iEl2OU7wg",
+    "twitch": "",
+    "tiktok": "",
+    "podcast": "",
+    "soundcloud": "",
+    "bandcamp": "",
+    "mastodon": "",
+    "stackoverflow": "https://stackoverflow.com/users/3984882/smartdev",
+    "kofi": "",
+    "steam": "https://steamcommunity.com/id/taxophone/",
+    "email": "steven@stevenmartinez.dev"
+  }
+}
