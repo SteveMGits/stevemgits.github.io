@@ -147,6 +147,7 @@
         });
         if (!res.ok) throw new Error(res.status + " " + res.statusText);
         const { data } = await res.json();
+
         renderAlerts(data);
         document.getElementById("last-updated").textContent =
           "Last updated: " + new Date().toLocaleTimeString();
@@ -157,8 +158,15 @@
     }
 
     function renderAlerts(alerts) {
-      // Only show unexpected alerts
-      alerts = alerts.filter(a => a.attributes.lifecycle != "UPCOMING");
+      let myNow = new Date();
+
+      alerts = alerts.filter(a => 
+        // Only show unexpected alerts
+        a.attributes.lifecycle != "UPCOMING" &&
+
+        // Only show alert less than 1 week old
+        myNow - (new Date(a.attributes.created_at)) < 7 * 24 * 60 * 60 * 1000
+      );
       
       const container = document.getElementById("alerts");
       
