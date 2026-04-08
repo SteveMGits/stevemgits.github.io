@@ -33,13 +33,13 @@
 
     .courier-text {
       font-family: "Courier New", monospace;
-      font-size: 20px;
+      font-size: 28px;
       fill: var(--color-gray-90);
     }
   </style>
-  <text x="51" y="26" class="courier-text">/\</text>
-  <text x="45" y="46" class="courier-text">|||</text>
-  <text x="50" y="66" class="courier-text">\\</text>
-  <text x="45" y="86" class="courier-text">|||</text>
-  <text x="51" y="106" class="courier-text">\/</text>
+  <text x="45" y="22" class="courier-text">/\</text>
+  <text x="37" y="46" class="courier-text">|||</text>
+  <text x="45" y="70" class="courier-text">\\</text>
+  <text x="37" y="94" class="courier-text">|||</text>
+  <text x="45" y="118" class="courier-text">\/</text>
 </svg>
