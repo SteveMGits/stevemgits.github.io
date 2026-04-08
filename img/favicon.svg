@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 124 124" fill="none">
+  <style>
+    /* Theme colors */
+    :root {
+        --color-gray-20: #EBC9ED;
+        --color-gray-50: #98349D;
+        --color-gray-90: #7C2B80;
+
+        background-color: #fff;
+
+        --text-color: var(--color-gray-90);
+        --text-color-link: #235280;
+        --text-color-link-active: #679C68;
+        --text-color-link-visited: #000;
+
+        --syntax-tab-size: 2;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-gray-90: #EBF2FA;
+            --color-gray-50: #3782C8;
+            --color-gray-20: #235380;
+
+            /* --text-color is assigned to --color-gray-_ above */
+            --text-color-link: #5CD19E;
+            --text-color-link-active: #FFFE80;
+            --text-color-link-visited: #247F58;
+
+            background-color: #222325;
+        }
+    }
+
+    .courier-text {
+      font-family: "Courier New", monospace;
+      font-size: 20px;
+      fill: var(--color-gray-90);
+    }
+  </style>
+  <text x="51" y="26" class="courier-text">/\</text>
+  <text x="45" y="46" class="courier-text">|||</text>
+  <text x="50" y="66" class="courier-text">\\</text>
+  <text x="45" y="86" class="courier-text">|||</text>
+  <text x="51" y="106" class="courier-text">\/</text>
+</svg>
