@@ -3,29 +3,22 @@
 	
 		
 		<url>
-			<loc>https://stevenmartinez.dev/about/</loc>
-			<lastmod>2026-03-23</lastmod>
-		</url>
-	
-	
-		
-		<url>
 			<loc>https://stevenmartinez.dev/blog/</loc>
-			<lastmod>2026-03-23</lastmod>
+			<lastmod>2026-03-19</lastmod>
 		</url>
 	
 	
 		
 		<url>
 			<loc>https://stevenmartinez.dev/</loc>
-			<lastmod>2026-03-23</lastmod>
+			<lastmod>2026-03-19</lastmod>
 		</url>
 	
 	
 		
 		<url>
 			<loc>https://stevenmartinez.dev/tags/</loc>
-			<lastmod>2026-03-23</lastmod>
+			<lastmod>2026-03-19</lastmod>
 		</url>
 	
 	
@@ -38,8 +31,22 @@
 	
 		
 		<url>
+			<loc>https://stevenmartinez.dev/about/</loc>
+			<lastmod>2026-05-06</lastmod>
+		</url>
+	
+	
+		
+		<url>
 			<loc>https://stevenmartinez.dev/projects/</loc>
-			<lastmod>2026-03-27</lastmod>
+			<lastmod>2026-05-06</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://stevenmartinez.dev/blog/Reviews/Control/</loc>
+			<lastmod>2026-06-15</lastmod>
 		</url>
 	
 </urlset>
