@@ -9,7 +9,7 @@
     --theme-body-background: Gainsboro;
     --theme-header-background: White;
     --theme-title-color: Black;
-    --theme-text-color: #666;
+    --theme-text-color: #1a1a1a;
 
     /* Line Colors */
     --blue-primary: DarkBlue;
@@ -31,26 +31,26 @@
 @media (prefers-color-scheme: dark){
     :root {
     /* Theme Colors */
-    --theme-body-background: Black;
-    --theme-header-background: DarkSlateGray;
-    --theme-text-color: #666;
+    --theme-body-background: #1a1a1a;
+    --theme-header-background: Black;
+    --theme-text-color: White;
     --theme-title-color: White;
 
     /* Line Colors */
     --blue-secondary: DarkBlue;
     --blue-primary: LightBlue;
 
-    --orange-primary: DarkOrange;
-    --orange-secondary: PeachPuff;
+    --orange-secondary: DarkOrange;
+    --orange-primary: PeachPuff;
 
-    --red-primary: DarkRed;
-    --red-secondary: LightPink;
+    --red-secondary: DarkRed;
+    --red-primary: LightPink;
 
-    --green-primary: DarkGreen;
-    --green-secondary: LightGreen;
+    --green-secondary: DarkGreen;
+    --green-primary: LightGreen;
 
-    --silver-primary: DarkGray;
-    --silver-secondary: White;
+    --silver-secondary: DarkGray;
+    --silver-primary: White;
     }
 }
 
@@ -98,18 +98,19 @@ h1.title {
 .alert h1 {
     margin: 0 0 0.25em;
     font-size: 2.5em;
-    color: var(--mbta-matisse);
+    color: var(--theme-text-color);
 }
 
 .alert h2 {
     margin: 0 0 0.25em;
     font-size: 2.0em;
-    color: var(--mbta-matisse);
+    color: var(--theme-text-color);
 }
 
 .alert p {
     margin: 0;
     font-size: 2.0em;
+    color: var(--theme-text-color);
 }
 
 .Blue {
@@ -145,30 +146,9 @@ h1.title {
     padding-right: 25px;
     background-repeat: no-repeat;
 }
-    
-.icon.Blue {
-    background-image: url('Blue Circle.svg');
-}
-
-.icon.Red {
-    background-image: url('Red Circle.svg');
-}
-
-.icon.Green {
-    background-image: url('Green Circle.svg');
-}
-
-.icon.Orange {
-    background-image: url('Orange Circle.svg');
-}
-
-.icon.Silver {
-    background-image: url('Blue Circle.svg');
-}
 
 .no-alerts {
     text-align: center;
     color: var(--theme-text-color);
     font-style: italic;
 }
-

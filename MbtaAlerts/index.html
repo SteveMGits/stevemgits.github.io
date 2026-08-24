@@ -64,16 +64,46 @@
       const container = document.getElementById("alerts");
       
       // Alert data for testing
+      /*
       alerts = [
-        { attributes: {
-          effect: "DELAY", 
-          cause: "CONSTRUCTION", 
-          short_header: "This is the short header",
-          header: "This is the (long) header",
-          informed_entity: [{route: "Blue"}]
-        }
-        }
+        { 
+          attributes: {
+            effect: "DELAY", 
+            cause: "CONSTRUCTION", 
+            short_header: "This is the short header",
+            header: "This is the (long) header",
+            informed_entity: [{route: "Blue"}]
+          }
+        },
+        { 
+          attributes: {
+            effect: "DELAY", 
+            cause: "CONSTRUCTION", 
+            short_header: "This is the short header",
+            header: "This is the (long) header",
+            informed_entity: [{route: "Red"}]
+          }
+        },
+        { 
+          attributes: {
+            effect: "DELAY", 
+            cause: "CONSTRUCTION", 
+            short_header: "This is the short header",
+            header: "This is the (long) header",
+            informed_entity: [{route: "Green"}]
+          }
+        },
+        { 
+          attributes: {
+            effect: "DELAY", 
+            cause: "CONSTRUCTION", 
+            short_header: "This is the short header",
+            header: "This is the (long) header",
+            informed_entity: [{route: "Orange"}]
+          }
+        },
       ];
+      */
 
       if (!alerts.length) {
         container.innerHTML = `<p class="no-alerts">No active subway alerts.</p>`;
@@ -89,7 +119,9 @@
           
           return `
             <div class="alert ${lineColor}">
-              <span class="icon ${lineColor}"></span>
+              <span class="icon ${lineColor}">
+                <object data="${lineColor} Circle.svg" type="image/svg+xml"></object>
+              </span>
               <div class="alertText">
                 <h1>${(toTitleCase(effect) || "Unknown")} - <em>${(toTitleCase(cause) || "Unknown")}</em></h1>
                 <p>${short_header || header || "No details available"}</p>
@@ -102,7 +134,7 @@
     // Initial load
     fetchAlerts();
     // Refresh every 60 seconds
-    setInterval(fetchAlerts, 300_000);
+    setInterval(fetchAlerts, 60_000);
   </script>
 </body>
 </html>

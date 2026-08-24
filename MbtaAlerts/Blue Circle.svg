@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="100"
@@ -6,18 +7,34 @@
   viewBox="0 0 100 100"
   style="background: none;"
 >
-  <!-- 1) Replace CIRCLE_COLOR with any CSS color (hex, rgb, named…) -->
+  <style>
+    :root {
+      --primary: DarkBlue;
+      --text: White;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: LightBlue;
+        --text: #1a1a1a;
+      }
+    }
+
+    circle {
+      fill: var(--primary);
+    }
+
+    text {
+      fill: var(--text);
+    }
+  </style>
+
   <circle
     cx="50"
     cy="50"
     r="45"
-    fill="DarkBlue"
   />
 
-  <!--
-    2) Replace XX with your two-letter code,
-    and TEXT_COLOR with any CSS color
-  -->
   <text
     x="50"
     y="52"
@@ -26,6 +43,5 @@
     font-family="Arial, sans-serif"
     font-size="36"
     font-weight="bold"
-    fill="White"
   >BL</text>
 </svg>
