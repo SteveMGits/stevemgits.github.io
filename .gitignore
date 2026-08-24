@@ -8,3 +8,4 @@ web_modules
 build
 /.config
 /.cache
+.DS_Store

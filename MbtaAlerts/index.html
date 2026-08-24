@@ -3,122 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>MBTA Subway Alerts</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 1800px;
-      margin: auto;
-      line-height: 1.4;
-      background-color: Gainsboro;
-    }
-    
-    h1 {
-      text-align: center;
-      color: black;
-      font-size: 5.0em;
-      border-width: 10px;
-      border-color: Gold;
-      border-style: solid;
-      border-radius: 30px;
-      background-color: White;
-    }
-    
-    #last-updated {
-      text-align: center;
-      font-size: 1.5em;
-      color: #666;
-    }
-    
-    #alerts {
-      margin-top: 1em;
-    }
-    
-    .alert {
-      display: flex;
-      border-left: 8px solid;
-      padding: 0.5em 1em;
-      margin-bottom: 0.75em;
-      border-radius: 3px;
-    }
-    
-    .alertText {
-      
-    }
-    
-    .alert h2 {
-      margin: 0 0 0.25em;
-      font-size: 2.5em;
-      color: #003E5B;
-    }
-
-    .alert p {
-      margin: 0;
-      font-size: 2.0em;
-    }
-    
-    .Blue {
-      border-left-color: DarkBlue;
-      background: LightBlue;
-    }
-    
-    .Red {
-      border-left-color: DarkRed;
-      background: LightPink;
-    }
-    
-    .Orange {
-      border-left-color: DarkOrange;
-      background: PeachPuff;
-    }
-    
-    .Green {
-      border-left-color: DarkGreen;
-      background: LightGreen;
-    }
-    
-    .Silver {
-      border-left-color: DarkGray;
-      background: White;
-    }
-    
-    .icon {
-      display: flex;
-      background-size: 200px, 200px;
-      min-height: 200px;
-      min-width: 200px;
-      padding-right: 25px;
-      background-repeat: no-repeat;
-    }
-        
-    .icon.Blue {
-      background-image: url('Blue Circle.svg');
-    }
-
-    .icon.Red {
-      background-image: url('Red Circle.svg');
-    }
-
-    .icon.Green {
-      background-image: url('Green Circle.svg');
-    }
-
-    .icon.Orange {
-      background-image: url('Orange Circle.svg');
-    }
-
-    .icon.Silver {
-      background-image: url('Blue Circle.svg');
-    }
-
-    .no-alerts {
-      text-align: center;
-      color: #006699;
-      font-style: italic;
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="mbta.svg" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>MBTA Subway Alerts</h1>
+  <h1 class="title">MBTA Subway Alerts</h1>
   <div id="last-updated">Last updated: —</div>
   <div id="alerts"><p class="no-alerts">Loading alerts…</p></div>
   <div id="no-api-key" style="display: none; color: Red;"><p class="no-alerts">Warning - no API Key set!</p></div>
@@ -157,6 +46,10 @@
       }
     }
 
+    function toTitleCase(str) {
+      return str.toLowerCase().replace(/\b\w/g, match => match.toUpperCase());
+    }
+
     function renderAlerts(alerts) {
       let myNow = new Date();
 
@@ -170,6 +63,18 @@
       
       const container = document.getElementById("alerts");
       
+      // Alert data for testing
+      alerts = [
+        { attributes: {
+          effect: "DELAY", 
+          cause: "CONSTRUCTION", 
+          short_header: "This is the short header",
+          header: "This is the (long) header",
+          informed_entity: [{route: "Blue"}]
+        }
+        }
+      ];
+
       if (!alerts.length) {
         container.innerHTML = `<p class="no-alerts">No active subway alerts.</p>`;
         return;
@@ -186,7 +91,7 @@
             <div class="alert ${lineColor}">
               <span class="icon ${lineColor}"></span>
               <div class="alertText">
-                <h2>${"Cause: " + (cause || "Unknown") + ", Effect: " + (effect || "Unknown")}</h2>
+                <h1>${(toTitleCase(effect) || "Unknown")} - <em>${(toTitleCase(cause) || "Unknown")}</em></h1>
                 <p>${short_header || header || "No details available"}</p>
               </div>
             </div>`;
