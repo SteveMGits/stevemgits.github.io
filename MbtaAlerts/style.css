@@ -58,7 +58,6 @@ body {
     font-family: sans-serif;
     max-width: 1000px;
     margin: auto;
-    line-height: 1.4;
     background-color: var(--theme-body-background);
 }
 
@@ -71,12 +70,13 @@ h1.title {
     border-style: solid;
     border-radius: 30px;
     background-color: var(--theme-header-background);
+    line-height: 1.4;
 }
 
 #last-updated {
     text-align: center;
     font-size: 1.5em;
-    color: var(--theme-text-color);
+    color: var(--mbta-purple);
 }
 
 #alerts {
