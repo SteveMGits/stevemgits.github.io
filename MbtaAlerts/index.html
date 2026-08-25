@@ -10,7 +10,7 @@
   <h1 class="title">MBTA Subway Alerts</h1>
   <div id="last-updated">Last updated: —</div>
   <div id="alerts"><p class="no-alerts">Loading alerts…</p></div>
-  <div id="no-api-key" style="display: none; color: Red;"><p class="no-alerts">Warning - no API Key set!</p></div>
+  <div id="no-api-key" class="no-alerts"><p>Warning - no API Key set!</p></div>
 
   <script>
 
@@ -47,6 +47,7 @@
     }
 
     function toTitleCase(str) {
+      str = str.replace(/_/g, " ");
       return str.toLowerCase().replace(/\b\w/g, match => match.toUpperCase());
     }
 
