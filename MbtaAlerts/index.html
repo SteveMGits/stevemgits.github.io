@@ -8,8 +8,8 @@
 </head>
 <body>
   <h1 class="title">MBTA Subway Alerts</h1>
-  <div id="last-updated">Last updated: —</div>
-  <div id="alerts"><p class="no-alerts">Loading alerts…</p></div>
+  <div id="last-updated">Last updated: <i>No data loaded</i></div>
+  <div id="alerts"><p class="no-alerts"></p></div>
   <div id="no-api-key" class="no-alerts"><p>Warning - no API Key set!</p></div>
 
   <script>
@@ -30,16 +30,22 @@
     const ALERTS_URL = "https://api-v3.mbta.com/alerts?filter[route_type]=1" /* + "&sort=-effective_datetime"*/;
 
     async function fetchAlerts() {
+      renderLoading();
+
+      // Wait so it feels like we're doing something
+      await new Promise(r => setTimeout(r, 1500));
+
       try {
-        const res = await fetch(ALERTS_URL, {
+        let res = await fetch(ALERTS_URL, {
           headers: headers ?? {}
         });
-        if (!res.ok) throw new Error(res.status + " " + res.statusText);
-        const { data } = await res.json();
+        
+        if (!res.ok) 
+          throw new Error(res.status + " " + res.statusText);
+        
+        let { data } = await res.json();
 
         renderAlerts(data);
-        document.getElementById("last-updated").textContent =
-          "Last updated: " + new Date().toLocaleTimeString();
       } catch (err) {
         document.getElementById("alerts").innerHTML =
           `<p class="no-alerts">Error fetching alerts:<br>${err.message}</p>`;
@@ -108,10 +114,8 @@
 
       if (!alerts.length) {
         container.innerHTML = `<p class="no-alerts">No active subway alerts.</p>`;
-        return;
-      }
-      
-      container.innerHTML = alerts
+      } else {
+        container.innerHTML = alerts
         .map(a => {
           // Each alert has attributes: header, description, effect
           const { effect, cause, short_header, header, informed_entity } = a.attributes;
@@ -130,6 +134,22 @@
             </div>`;
         })
         .join("");
+      }
+
+      updateLastUpdated();
+    }
+
+    function updateLastUpdated() {
+      document.getElementById("last-updated").textContent =
+          "Last updated: " + new Date().toLocaleTimeString();
+    }
+
+    function renderLoading() {
+      document.getElementById("alerts").innerHTML = 
+        `<div class="no-alerts">
+          <p style="display: inline-block">Loading alerts...</p>
+          <div id="spinner-container"><object id="spinner" data="mbta.svg" type="image/svg+xml"></object></div>
+        </div>`;
     }
 
     // Initial load
