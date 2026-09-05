@@ -73,6 +73,21 @@ h1.title {
     line-height: 1.4;
 }
 
+.top-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0.5em;
+}
+
+.top-links a {
+    color: var(--mbta-matise);
+}
+
+.top-links a:hover {
+    color: var(--mbta-purple);
+}
+
 #last-updated {
     text-align: center;
     font-size: 1.5em;
@@ -91,8 +106,9 @@ h1.title {
     border-radius: 3px;
 }
 
-.alertText {
-    
+.alert-text {
+    padding-top: 1em;
+    height: inherit;
 }
 
 .alert h1 {
@@ -169,13 +185,18 @@ h1.title {
 }
 
 #spinner-container {
-    display: inline-block;
+    display: inline;
+    vertical-align: bottom;
     font-style: normal;
     min-height: 25px;
     min-width: 25px;
 }
 
 #spinner {
+    display: inline;
+    vertical-align: bottom;
     transform-origin: center center;
     animation: spin 800ms linear infinite;
+    height: 1em;
+    width: 1em;
 }

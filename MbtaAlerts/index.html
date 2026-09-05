@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>MBTA Subway Alerts</title>
-  <link rel="icon" type="image/svg+xml" href="mbta.svg" />
+  <link rel="icon" type="image/svg+xml" href="train-icon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <p class="top-links"><a href="../index.html">Back to Home</a></p>
   <h1 class="title">MBTA Subway Alerts</h1>
-  <div id="last-updated">Last updated: <i>No data loaded</i></div>
   <div id="alerts"><p class="no-alerts"></p></div>
+  <div id="last-updated">Last updated: <i>No data loaded</i></div>
   <div id="no-api-key" class="no-alerts"><p>Warning - no API Key set!</p></div>
 
   <script>
@@ -71,7 +72,7 @@
       const container = document.getElementById("alerts");
       
       // Alert data for testing
-      /*
+      
       alerts = [
         { 
           attributes: {
@@ -110,10 +111,10 @@
           }
         },
       ];
-      */
+      
 
       if (!alerts.length) {
-        container.innerHTML = `<p class="no-alerts">No active subway alerts.</p>`;
+        container.innerHTML = `<div class="no-alerts"><p>No active subway alerts.</p></div>`;
       } else {
         container.innerHTML = alerts
         .map(a => {
@@ -127,9 +128,11 @@
               <span class="icon ${lineColor}">
                 <object data="${lineColor} Circle.svg" type="image/svg+xml"></object>
               </span>
-              <div class="alertText">
-                <h1>${(toTitleCase(effect) || "Unknown")} - <em>${(toTitleCase(cause) || "Unknown")}</em></h1>
-                <p>${short_header || header || "No details available"}</p>
+              <div class="alert-text">
+                <span>
+                  <h1>${(toTitleCase(effect) || "Unknown")} - <em>${(toTitleCase(cause) || "Unknown")}</em></h1>
+                  <p>${short_header || header || "No details available"}</p>
+                </span>
               </div>
             </div>`;
         })
@@ -147,8 +150,7 @@
     function renderLoading() {
       document.getElementById("alerts").innerHTML = 
         `<div class="no-alerts">
-          <p style="display: inline-block">Loading alerts...</p>
-          <div id="spinner-container"><object id="spinner" data="mbta.svg" type="image/svg+xml"></object></div>
+          <p>Loading alerts... <span id="spinner-container"><object id="spinner" data="spinner.svg" type="image/svg+xml"></object></span></p>
         </div>`;
     }
 
