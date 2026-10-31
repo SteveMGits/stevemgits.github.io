@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slack-o-Meter</title>
+  <script src="script.js"></script>
+</head>
+<body>
+    <div id="controls">
+        <div style="display: none">
+            <fieldset>
+                <legend>Salary type:</legend>
+                <label for="annual_salary">Annual</label>
+                <input id="annual_salary" type="radio" name="salary"></input>
+                <label for="hourly_salary">Hourly</label>
+                <input id="hourly_salary" type="radio" name="salary"></input>
+            </fieldset>
+            
+        </div>
+        <div>
+            <label for="tick_rate">Tick Rate (ms):</label>
+            <input type="number" id="tick_rate"></input>
+            <p>
+                42 ms ~ 24 fps <br />
+                33 ms ~ 30 fps <br />
+                17 ms ~ 60 fps
+            </p>
+        </div>
+        <div>
+            <label for="salary">Salary ($/year):</label>
+            <input type="number" id="salary"></input>
+        </div>
+        <div>
+            <label for="start_date">Start date:</label>
+            <input type="date" id="start_date"></input>
+        </div>
+        <div>
+            <button id="start_button" onclick="Start()">Start</button>
+            <button id="stop_button" onClick="Stop()">Stop</button>
+        </div>
+    </div>
+    <div id="output">
+        <span>$</span><span id="pay"></span>
+    </div>
+</body>
