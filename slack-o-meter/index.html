@@ -7,15 +7,12 @@
 </head>
 <body>
     <div id="controls">
-        <div style="display: none">
-            <fieldset>
-                <legend>Salary type:</legend>
-                <label for="annual_salary">Annual</label>
-                <input id="annual_salary" type="radio" name="salary"></input>
-                <label for="hourly_salary">Hourly</label>
-                <input id="hourly_salary" type="radio" name="salary"></input>
-            </fieldset>
-            
+        <div style="" onClick="ChangeSalaryType()">
+            <legend>Salary type:</legend>
+            <label for="annual_salary">Annual</label>
+            <input id="annual_salary" type="radio" name="salary_type" checked></input>
+            <label for="hourly_salary">Hourly</label>
+            <input id="hourly_salary" type="radio" name="salary_type"></input>
         </div>
         <div>
             <label for="tick_rate">Tick Rate (ms):</label>
@@ -26,17 +23,22 @@
                 17 ms ~ 60 fps
             </p>
         </div>
-        <div>
+        <div class="annual">
             <label for="salary">Salary ($/year):</label>
             <input type="number" id="salary"></input>
         </div>
-        <div>
+        <div class = "annual">
             <label for="start_date">Start date:</label>
             <input type="date" id="start_date"></input>
+        </div>
+        <div class="hourly">
+            <label for="wage">Wage ($/hour):</label>
+            <input type="number" id="wage"></input>
         </div>
         <div>
             <button id="start_button" onclick="Start()">Start</button>
             <button id="stop_button" onClick="Stop()">Stop</button>
+            <button id=""reset_button" onClick="Reset()" class="hourly">Reset</button>
         </div>
     </div>
     <div id="output">
